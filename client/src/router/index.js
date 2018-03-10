@@ -1,15 +1,37 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import Register from '@/components/Register'
+import Login from '@/components/Login'
+import Machines from '@/components/Machines/MachinesPanel'
+import AddMachine from '@/components/AddMachine'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      path: '*',
+      redirect: 'machines'
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: Register
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
+    },
+    {
+      path: '/machines',
+      name: 'machines',
+      component: Machines
+    },
+    {
+      path: '/machines/add',
+      name: 'machines-add',
+      component: AddMachine
     }
   ]
 })
